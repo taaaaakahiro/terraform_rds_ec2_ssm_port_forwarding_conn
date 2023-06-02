@@ -16,7 +16,7 @@ resource "aws_vpc_endpoint" "ssmmessages_interface_endpoint" {
   service_name        = "com.amazonaws.ap-northeast-1.ssmmessages"
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
-  subnet_ids          = [aws_subnet.pri_1c.id]
+  subnet_ids          = [aws_subnet.pri_1a.id]
   security_group_ids  = [aws_security_group.vpce_sg.id]
   tags = {
     Name = "${var.env}-${var.service}-rds-bastion-ssmmessages-vpce"
@@ -28,7 +28,7 @@ resource "aws_vpc_endpoint" "ec2messages_interface_endpoint" {
   service_name        = "com.amazonaws.ap-northeast-1.ec2messages"
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
-  subnet_ids          = [aws_subnet.pri_1d.id]
+  subnet_ids          = [aws_subnet.pri_1a.id]
   security_group_ids  = [aws_security_group.vpce_sg.id]
   tags = {
     Name = "${var.env}-${var.service}-rds-bastion-ec2messages-vpce"

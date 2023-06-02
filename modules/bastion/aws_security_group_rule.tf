@@ -1,7 +1,7 @@
 # # aws_security_group_rule.tf
 
 # resource "aws_security_group_rule" "this" {
-#   security_group_id        = var.db_security_group_id
+#   security_group_id        = aws_security_group.rds_bastion_sg.id
 #   type                     = "ingress"
 #   from_port                = 3306
 #   to_port                  = 3306
